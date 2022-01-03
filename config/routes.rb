@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'tests#index'
 
   
-  resources :groups, only: [:index, :show, :new, :create, :destroy]
-
+  resources :groups, only: [:index, :show, :new, :create, :destroy] do
+    resources :money_tracks, only: [ :new, :show, :create]
+  end
 end

@@ -3,6 +3,11 @@ class GroupsController < ApplicationController
         @groups = Group.where(user_id: current_user.id)
     end
 
+    def show
+        @group = Group.find(params[:id])
+        @group_money_tracks = @group.money_tracks.all
+    end
+
     def new
         @group = Group.new
         @icons = icons

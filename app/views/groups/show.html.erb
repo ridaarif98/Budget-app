@@ -1,0 +1,6 @@
+<h3><%= @group.name%></h3>
+
+<%= image_tag @group.icon %>
+<div>
+<%=link_to 'Add transcaion', new_group_money_track_path(group_id: @group.id) %>
+</div>
