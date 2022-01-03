@@ -1,0 +1,11 @@
+<%= form_with model: @group, class:"input-form"  do |f|%>
+    
+    <%= f.label :title %><br>
+    <%= f.text_field :name,  {:required => true}%><br>
+
+    <%= f.label :Icon %><br>
+    <%= f.file_field :icon, alt: 'icon' %>
+
+    <%= f.submit "Create Post", class: "submit" %>
+<%end%>
+
