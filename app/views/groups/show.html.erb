@@ -16,40 +16,38 @@
   </ul>
   </nav>
 
-<h3><%= @group.name%></h3>
+<div class="p-2 category-div">
+  <div class="category-info">
+    <p> <%=image_tag @group.icon ,class:"p-2 m-2 rounded img-thumbnail"%></p>
+    <ul class="p-2 m-2">
+        <li> <p class="p-2 m-2 text-muted h2" ><%= @group.name%></p></li>
+        <li> <p class="p-2 m-2"> <%= @group.created_at%></p></li>
+    </ul>
+  </div>
+    <p class="p-2 m-2 h3"> $<%= @group.money_tracks.sum(:amount)%></p>
+</div>
 
-<%= image_tag @group.icon %>
-<p>Total: <%=@group.money_tracks.sum(:amount)%></p>
 
-<table class="table table-striped table-bordered">
  <% if @group.money_tracks.any? %>
-    <thead>
-        <tr>
-        <th>Name</th>
-        <th>Value</th>
-        <th>Action</th>
-        </tr>
-    </thead>
-
-    <tbody>
-    <% @group.money_tracks.order(created_at:'DESC').each do |fd|%>
-    <tr>
-      <td><%= fd.name%></th>
-      <td><%= fd.amount%></td>
     
-      <td class="mb-3 col-sm-3">
-  
-        <%=link_to "Delete", class:"btn btn-outline-dark"%>
-        <%=link_to "Modify", class:"btn btn-outline-dark"%>
 
-      </td>
-    </tr>
-  
-    </tbody>
+    
+    <% @group.money_tracks.order(created_at:'DESC').each do |fd|%>
+      <div class="p-2 m-4 category-div">
+        <div class="category-info">
+          <ul class="p-2 m-2">
+            <li><p class="p-2 m-2 text-muted h2" ><%= fd.name%></p></li>
+            <li> <p class="p-2 m-2"> <%= fd.created_at%></p></li>
+          </ul>
+        </div>
+        <p class="p-2 m-2 h3" >$<%= fd.amount%></p>
+      </div>
     <%end%>
+  <%else%>
+      <p class="p-2 m-2 h3" >There are no transactions for this category</p>
   <%end%>
-</table>
 
-<div>
-<%=link_to 'Add transcaion', new_group_money_track_path( @group) %>
+
+<div class="w-100 py-3 px-3 btnn">
+    <%= link_to "Add transaction",  new_group_money_track_path( @group), class: "btn btn-outline-light  w-75 p-2"%>
 </div>

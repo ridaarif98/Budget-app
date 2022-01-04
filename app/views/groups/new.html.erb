@@ -13,20 +13,20 @@
     </li>
   </ul>
   </nav>
-    
-    <%= f.label :title %><br>
-    <%= f.text_field :name,  {:required => true}%><br>
 
-    <%= f.label :Icon %><br>
-    <%= f.select :icon,options_for_select([
-        ['grocery', @icons[0]],
-        ['shopping' ,@icons[1]],
-        ['education' ,@icons[2]],
-        ['bills' ,@icons[3]],
-        ['insurance' ,@icons[4]],
-        ['travel' ,@icons[5]],
-      ]), required: true  %>
+  <div class="m-5 mb-3">
+    <%= f.text_field :name,  required: true,  class:"p-2 form-control", placeholder: "Name"%><br>
+  </div>
+  <div class="m-5 mb-3">
+    <%= f.select :icon, options_for_select([
+      ['Grocery', @icons[0]],
+      ['Shopping' ,@icons[1]],
+      ['Education' ,@icons[2]],
+      ['Bills' ,@icons[3]],
+      ['Insurance' ,@icons[4]],
+      ['Travel' ,@icons[5]],
+    ]),{ include_blank: "Select Icon"}, required: true , class:"form-select"%>
 
-    
+  </div>  
 <%end%>
 

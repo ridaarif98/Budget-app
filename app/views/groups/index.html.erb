@@ -16,9 +16,25 @@
   </ul>
   </nav>
 
+<% if @groups.any?%>
+
 <% @groups.each do |group| %>
-
-   <p> <%=image_tag group.icon %></p>
-    <p><%= link_to group.name, group_path(group) %></p>
-
+  <div class="p-2 m-3  category-div">
+   <div class="category-info">
+    <p> <%=image_tag group.icon ,class:"p-2 m-2 rounded img-thumbnail"%></p>
+    <ul class="p-2 m-2">
+      <li> <p ><%= link_to group.name, group_path(group), class:"p-2 m-2 text-muted h2" %></p></li>
+      <li> <p class="p-2 m-2"> <%= group.created_at%></p></li>
+    </ul>
+    </div>
+    <p class="p-2 m-2 h3"> $<%= group.money_tracks.sum(:amount)%></p>
+    </div>
 <%end%>
+<%else%>
+<p>There is no Category. You can add Category</p>
+<%end%>
+
+
+<div class=" w-100  py-3 px-3 btnn">
+    <%= link_to "Add Category", new_group_path, class: "btn btn-outline-light  w-75 p-2"%>
+</div>
