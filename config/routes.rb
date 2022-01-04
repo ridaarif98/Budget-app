@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   
   resources :groups, only: [:index, :show, :new, :create, :destroy] do
-    resources :money_tracks, only: [ :new, :show, :create]
+    resources :money_tracks, only: [ :new, :show, :create, :destroy]
   end
 end

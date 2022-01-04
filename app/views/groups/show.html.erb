@@ -24,7 +24,14 @@
         <li> <p class="p-2 m-2"> <%= @group.created_at%></p></li>
     </ul>
   </div>
-    <p class="p-2 m-2 h3"> $<%= @group.money_tracks.sum(:amount)%></p>
+  <ul class="p-2 m-2">
+    <li><p class="p-2 m-2 h3"> $<%= @group.money_tracks.sum(:amount)%></p></li>
+    <li>
+    <%if can? :destroy, @group%>
+        <%=link_to "Delete", group_path(@group.id), method: :delete, class:"btn btn-primary px-4 m-2"%>
+    <%end%>
+    </li>
+  </ul>
 </div>
 
 
@@ -40,7 +47,14 @@
             <li> <p class="p-2 m-2"> <%= fd.created_at%></p></li>
           </ul>
         </div>
-        <p class="p-2 m-2 h3" >$<%= fd.amount%></p>
+        <ul class="p-2 m-2">
+         <li> <p class="p-2 m-2 h3" >$<%= fd.amount%></p></li>
+         <li>
+          <%if can? :destroy, fd%>
+          <%=link_to "Delete", group_money_track_path(group_id: @group.id, id: fd.id), method: :delete, class:"btn btn-primary px-4 m-2"%>
+          <%end%>
+         </li>
+        </ul>
       </div>
     <%end%>
   <%else%>
