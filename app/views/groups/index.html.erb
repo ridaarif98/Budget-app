@@ -1,4 +1,21 @@
-<h1>Categories</h1>
+<nav class="header">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li>
+    <a href="/"><i class="fa fa-home"></i></a>
+    </li>
+    <li>
+      <h2 class="heading fw-bold">Catgories</h2>
+    </li>
+    <li>
+    <%= link_to destroy_user_session_path, method: :delete do %>   
+      <i class="fa fa-sign-out"></i>
+    <%end%>
+    
+   
+    </li>
+  </ul>
+  </nav>
+
 <% @groups.each do |group| %>
 
    <p> <%=image_tag group.icon %></p>

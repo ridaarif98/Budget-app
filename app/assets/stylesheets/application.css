@@ -18,11 +18,39 @@
   padding: 0;
 }
 
-.heading {
+.header ul {
+  display: flex;
+  background-color: #3778c2;
+  color: white;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header ul li {
+  line-height: 40px;
+  padding: 5px;
+}
+
+.header a {
+  color: inherit;
+}
+
+.header i {
+  font-size: 32px;
+}
+
+.header ul .btn {
+  background-color: inherit;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* .heading {
   background-color: #3778c2;
   font-size: 32px;
   color: white;
   text-align: center;
   padding: 10px;
   margin: 0;
-}
+} */
