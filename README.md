@@ -46,6 +46,9 @@
   bundle install
 ```
 
+```sh
+  npm install
+```
 ### Run
 
 ```
