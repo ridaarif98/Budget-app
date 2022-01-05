@@ -5,6 +5,11 @@
 ## Live Link
 
 - [Heroku](https://lit-ridge-01801.herokuapp.com/)
+
+## Video
+
+- [Video](https://www.loom.com/share/58e07b401609459dbded6b3987db7380)
+
 ## Built With
 
 - Ruby
