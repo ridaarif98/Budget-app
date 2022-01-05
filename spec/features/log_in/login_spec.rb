@@ -22,7 +22,7 @@ RSpec.feature 'Login', type: :feature do
     fill_in 'email', with: 'user@example.com'
     fill_in 'pass', with: 'password'
     click_button
-    expect(page).to have_content 'Catgories'
+    expect(page).to have_content 'Categories'
   end
 
   it 'Login successfully' do

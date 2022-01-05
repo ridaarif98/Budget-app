@@ -15,7 +15,7 @@ RSpec.feature 'Group Index', type: :feature do
   end
 
   it 'show Catgories heading' do
-    expect(page).to have_content 'Catgories'
+    expect(page).to have_content 'Categories'
   end
 
   it 'show category name' do

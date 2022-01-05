@@ -27,6 +27,6 @@ RSpec.feature 'Signup', type: :feature do
     fill_in 'email', with: 'ali@example.com'
     fill_in 'new-pass', with: 'password'
     click_button
-    expect(page).to have_content 'Catgories'
+    expect(page).to have_content 'Categories'
   end
 end
