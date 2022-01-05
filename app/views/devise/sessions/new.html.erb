@@ -17,11 +17,11 @@
  
   <%= render 'layouts/errornotice' %>
   <div class="m-5 mb-3">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"p-2 form-control", placeholder: "Email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"p-2 form-control", placeholder: "Email", id: 'email' %>
   </div>
 
   <div class="m-5 mb-3">
-    <%= f.password_field :password, autocomplete: "current-password", class:"p-2 form-control", placeholder: "Password" %>
+    <%= f.password_field :password, autocomplete: "current-password", class:"p-2 form-control", placeholder: "Password", id: 'pass' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
