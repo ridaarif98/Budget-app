@@ -4,7 +4,7 @@
 
 ## Live Link
 
-- [Heroku](https://lit-ridge-01801.herokuapp.com/)
+- [Live Link](https://budget-app-177k.onrender.com/)
 
 ## Video
 
